@@ -26,6 +26,7 @@ use serde_json::Value;
 use aes_gcm::Aes256Gcm;
 use aes_gcm::aead::{Aead, NewAead, generic_array::GenericArray};
 
+// Chrome Module Working as of Google Chrome Version: Version 88.0.4324.146 (Official Build) (64-bit)
 // Chrome Data Structure
 pub struct ChromeData {
     pub cd_entries: Vec<ChromeDataEntry>,
